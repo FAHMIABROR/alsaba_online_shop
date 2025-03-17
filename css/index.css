@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #f8b400;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Mengatur section hero agar full page */
+/* Mengatur hero section menjadi full screen */
+.hero {
+    width: 100%;
+    height: 100vh; /* Tinggi penuh layar */
+    background: url('assets/dendeng-ayam.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Overlay gelap agar teks lebih jelas */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Efek gelap transparan */
+}
+
+/* Menempatkan teks di atas overlay */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-text h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.hero-text h2 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+/* Efek khusus untuk diskon */
+.hero-text p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.hero-text p span {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+/* Tombol CTA */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 18px;
+    color: white;
+    background: #ff5722;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #ff784e;
+    transform: scale(1.05);
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    .hero-text h2 {
+        font-size: 24px;
+    }
+}
+
+
+
+.keunggulan {
+    text-align: center;
+    padding: 80px 20px; /* Menambah jarak atas dan bawah */
+    background: #f8f8f8;
+}
+
+.keunggulan h2 {
+    font-size: 36px; /* Memperbesar teks heading */
+    margin-bottom: 50px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Menambah jarak antar item */
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Memperbesar item */
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    transform: scale(1.08);
+}
+
+.feature-item img {
+    width: 100px; /* Memperbesar ikon */
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 18px; /* Memperbesar teks */
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+
+
+/* Testimoni */
+.testimoni {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff3e0;
+}
+
+.testimoni h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.testimoni-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+    white-space: nowrap;
+    scrollbar-width: none; /* Menghilangkan scrollbar */
+}
+
+.testimoni-carousel::-webkit-scrollbar {
+    display: none; /* Menghilangkan scrollbar di Chrome/Safari */
+}
+
+.testimoni-item {
+    flex: 0 0 300px;
+    padding: 20px;
+    background: #ffcc80;
+    border-radius: 10px;
+    font-size: 18px;
+    scroll-snap-align: center;
+}
+
+/.product-carousel {
+    overflow: visible; /* Menghilangkan efek scroll */
+    display: flex;
+    justify-content: center; /* Produk tetap di tengah */
+}
+
+.product-track {
+    flex-wrap: wrap; /* Produk akan turun ke bawah jika tidak cukup ruang */
+    justify-content: center;
+}
+
+
+/* Tentang Kami */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+
+.about h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.about img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+/* Newsletter */
+.newsletter {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ff5722;
+    color: white;
+}
+
+.newsletter h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.newsletter input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    background: #ffcc80;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.newsletter button:hover {
+    background: #ffe0b2;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: white;
+}

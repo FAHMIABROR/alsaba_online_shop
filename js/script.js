@@ -28,3 +28,4 @@ const track = document.querySelector(".product-track");
 const products = [...track.children];
 
 Scroll;
+

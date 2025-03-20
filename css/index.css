@@ -1,10 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    color: #333;
+}
+
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -32,14 +39,14 @@ nav ul {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 18px;
 }
 
-/* Mengatur section hero agar full page */
-/* Mengatur hero section menjadi full screen */
+/* Hero Section */
 .hero {
     width: 100%;
-    height: 100vh; /* Tinggi penuh layar */
-    background: url('assets/dendeng-ayam.jpg') no-repeat center center/cover;
+    height: 94vh;
+    background: url('../assets/baner.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,20 +55,23 @@ nav ul li a {
     position: relative;
 }
 
-/* Overlay gelap agar teks lebih jelas */
+/* Overlay gelap */
 .hero::before {
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Efek gelap transparan */
+    background: rgba(0, 0, 0, 0.5);
 }
 
-/* Menempatkan teks di atas overlay */
+/* Teks di Hero */
 .hero-text {
     position: relative;
     z-index: 2;
     max-width: 600px;
+    padding: 20px;
 }
 
 .hero-text h4 {
@@ -112,33 +122,22 @@ nav ul li a {
     transform: scale(1.05);
 }
 
-/* Responsif untuk layar kecil */
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 36px;
-    }
-    .hero-text h2 {
-        font-size: 24px;
-    }
-}
-
-
-
+/* Keunggulan */
 .keunggulan {
     text-align: center;
-    padding: 80px 20px; /* Menambah jarak atas dan bawah */
+    padding: 80px 20px;
     background: #f8f8f8;
 }
 
 .keunggulan h2 {
-    font-size: 36px; /* Memperbesar teks heading */
+    font-size: 36px;
     margin-bottom: 50px;
 }
 
 .features {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Menambah jarak antar item */
+    gap: 40px;
     flex-wrap: wrap;
 }
 
@@ -148,7 +147,7 @@ nav ul li a {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Memperbesar item */
+    width: 200px;
     transition: 0.3s;
 }
 
@@ -157,20 +156,122 @@ nav ul li a {
 }
 
 .feature-item img {
-    width: 100px; /* Memperbesar ikon */
+    width: 100px;
     height: 100px;
     object-fit: contain;
     margin-bottom: 15px;
 }
 
 .feature-item h3 {
-    font-size: 18px; /* Memperbesar teks */
+    font-size: 18px;
     font-weight: bold;
     color: #333;
     margin-top: 10px;
 }
 
+/* Container Produk */
+/* Product Section */
+.our-products {
+    padding: 50px 20px;
+    text-align: center;
+    background: #fff;
+}
 
+.banner {
+    position: relative;
+    background: url('../assets/banner.jpg') no-repeat center center/cover;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.banner h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.banner p {
+    font-size: 18px;
+}
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Product Box */
+.product {
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* Gambar Produk */
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Nama Produk */
+.product h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+/* Harga Produk */
+.product p {
+    font-size: 20px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Tombol Beli */
+.buy-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #ff6600;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: #e65c00;
+}
 
 /* Testimoni */
 .testimoni {
@@ -191,11 +292,11 @@ nav ul li a {
     gap: 20px;
     padding: 20px;
     white-space: nowrap;
-    scrollbar-width: none; /* Menghilangkan scrollbar */
+    scrollbar-width: none;
 }
 
 .testimoni-carousel::-webkit-scrollbar {
-    display: none; /* Menghilangkan scrollbar di Chrome/Safari */
+    display: none;
 }
 
 .testimoni-item {
@@ -205,91 +306,6 @@ nav ul li a {
     border-radius: 10px;
     font-size: 18px;
     scroll-snap-align: center;
-}
-
-/* Section Styling */
-.our-products {
-    text-align: center;
-    padding: 50px 20px;
-    background: #fff;
-}
-
-.our-products h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Carousel Styling */
-.product-carousel {
-    display: flex;
-    justify-content: center;
-    overflow: hidden; /* Mencegah scroll */
-    width: 100%;
-}
-
-/* Track Produk */
-.product-track {
-    display: flex;
-    gap: 20px;
-    justify-content: center; /* Produk tetap rapi di tengah */
-    flex-wrap: nowrap; /* Pastikan produk tidak turun ke bawah */
-    width: 100%;
-}
-
-/* Product Box */
-.product {
-    width: 220px;
-    padding: 15px;
-    background: white;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.product:hover {
-    transform: scale(1.05);
-}
-
-.product img {
-    width: 100%;
-    height: 150px; /* Atur tinggi agar seragam */
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* Judul Produk */
-.product h3 {
-    font-size: 20px;
-    color: #333;
-    margin: 10px 0 5px;
-}
-
-/* Harga Produk */
-.product p {
-    font-size: 18px;
-    color: #e74c3c;
-    font-weight: bold;
-}
-
-/* Tombol Beli */
-.buy-btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #ff6600;
-    color: white;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.buy-btn:hover {
-    background: #e65c00;
 }
 
 /* Tentang Kami */
@@ -356,8 +372,83 @@ nav ul li a {
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background: black;
+    background: #000;
     color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+    color: #ff9900;
+}
+
+.footer-section p, .footer-section a {
+    color: #bbb;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.subscribe-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.subscribe-box input {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.subscribe-box button {
+    padding: 10px 20px;
+    background: #ff9900;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    background: #ff9900;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bbb;
+    border-top: 1px solid #444;
+    padding-top: 10px;
 }

@@ -1,33 +1,54 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <script defer src="../js/checkout.js"></script>
 </head>
 <body>
+    <div class="checkout-container">
+        <!-- Bagian Kiri (Gambar Produk + Item) -->
+        <div class="checkout-left">
+            <img src="product-main.jpg" alt="Product">
+            <h2>Your Cart</h2>
+            <div id="checkout-items"></div>
+            
+            <!-- Elemen baru yang diminta -->
+            <div id="checkout-cart"></div>
+            <p id="checkout-total">Total: €0.00</p>
+        </div>
 
-    <header>
-        <h1>Checkout</h1>
-    </header>
+        <!-- Bagian Kanan (Form Alamat + Payment) -->
+        <div class="checkout-right">
+            <h2>Shipping & Payment</h2>
+            
+            <form id="shipping-form">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="address" placeholder="Address" required>
+                <input type="text" id="city" placeholder="City" required>
+                <input type="text" id="postal-code" placeholder="Postal Code" required>
+                <input type="text" id="country" placeholder="Country" required>
+            </form>
 
-    <form id="checkout-form">
-        <label>Nama:</label>
-        <input type="text" required>
+            <h3>Payment Method</h3>
+            <select id="payment-method">
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Bank Transfer</option>
+                <option value="gopay">GoPay</option>
+                <option value="dana">DANA</option>
+                <option value="ovo">OVO</option>
+                <option value="shopeepay">ShopeePay</option>
+                <option value="bca">BCA</option>
+                <option value="bni">BNI</option>
+                <option value="bri">BRI</option>
+                <option value="mandiri">Mandiri</option>
+            </select>
 
-        <label>Alamat:</label>
-        <input type="text" required>
-
-        <label>Metode Pembayaran:</label>
-        <select>
-            <option>Transfer Bank</option>
-            <option>e-Wallet</option>
-        </select>
-
-        <button type="submit">Bayar</button>
-    </form>
-
-    <script src="script.js"></script>
+            <button id="place-order">Place Order</button>
+        </div>
+    </div>
 </body>
 </html>

@@ -207,17 +207,90 @@ nav ul li a {
     scroll-snap-align: center;
 }
 
-/.product-carousel {
-    overflow: visible; /* Menghilangkan efek scroll */
+/* Section Styling */
+.our-products {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff;
+}
+
+.our-products h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Carousel Styling */
+.product-carousel {
     display: flex;
-    justify-content: center; /* Produk tetap di tengah */
-}
-
-.product-track {
-    flex-wrap: wrap; /* Produk akan turun ke bawah jika tidak cukup ruang */
     justify-content: center;
+    overflow: hidden; /* Mencegah scroll */
+    width: 100%;
 }
 
+/* Track Produk */
+.product-track {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Produk tetap rapi di tengah */
+    flex-wrap: nowrap; /* Pastikan produk tidak turun ke bawah */
+    width: 100%;
+}
+
+/* Product Box */
+.product {
+    width: 220px;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    height: 150px; /* Atur tinggi agar seragam */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Judul Produk */
+.product h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+/* Harga Produk */
+.product p {
+    font-size: 18px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Tombol Beli */
+.buy-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #ff6600;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: #e65c00;
+}
 
 /* Tentang Kami */
 .about {
